@@ -1,0 +1,48 @@
+<ion-header text-center>
+    
+     <ion-navbar color = "secondary">
+       <ion-title>Grocery</ion-title>
+       <!-- <ion-buttons end>
+          <button ion-button (click)="continue()"> New </button>
+      </ion-buttons>
+      <ion-buttons end>
+          <button ion-button (click)="join()"> Join </button>
+      </ion-buttons> -->
+    </ion-navbar>
+   </ion-header>
+
+   <ion-content class="card-background-page">
+        <ion-list inset>
+            <ion-list-header style="font-size:30px;">
+                This Meal Plan needs these Groceries...
+            </ion-list-header>
+
+            <p align="center" style="color:grey;">
+              can you bring any?
+            </p>
+
+
+                <ion-item *ngFor="let grocery of groceryList">
+                    <ion-checkbox [(ngModel)]="grocery.beingBrought"></ion-checkbox>
+                    <ion-label>{{grocery.itemName}}</ion-label>
+                </ion-item>
+
+                <ion-item>
+                    <ion-checkbox [(ngModel)]="all" (click) = "changing()"></ion-checkbox>
+                    <ion-label>ALL?</ion-label>
+                </ion-item>
+
+                    <!-- <ion-item *ngIf="data.all == true"> -->
+                        <!-- <ion-checkbox [(ngModel)]="data.all"></ion-checkbox> -->
+                        <!-- <ion-label>ALL?</ion-label> -->
+                      <!-- </ion-item> -->
+      
+                  </ion-list>
+
+                  <p align="center" (click) = "editing()"><u><i> No, I can't bring these </i></u></p>
+
+    </ion-content>
+   
+   <ion-footer text-center>
+      <button ion-button color = "secondary" round outline large (click)= "continue()"> Continue </button>
+  </ion-footer>

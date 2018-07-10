@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-navbar color = "secondary">
+      <ion-title>USER PROFILE</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content class="card-background-page">
+  
+  <ion-card>
+      <ion-item-divider color = "light">
+          <ion-avatar item-start>
+              <img src= "http://www.hexatar.com/gallery/thumb/171025_051339_m66a7450fd4_avatar.png">
+            </ion-avatar>
+            <h1 *ngIf = "user != undefined">{{user.userName}}</h1>
+            <button ion-button outline item-end icon-right  round large color = "danger">
+                    {{rating}}  
+                  <ion-icon name="star"></ion-icon>
+                    
+                  </button>
+        </ion-item-divider>
+
+        <ion-list inset *ngIf = "user != undefined">
+
+          <ion-item *ngFor = "let review of user.reviews">
+              <ion-avatar item-start>
+                  <img src="http://www.hexatar.com/gallery/thumb/171025_051339_m66a7450fd4_avatar.png">
+              </ion-avatar>
+              <h2> {{review.authorUsername}}</h2>
+              <p style="white-space:normal"> {{review.body}}</p>
+              <button ion-button outline item-end icon-right  round large color = "danger">
+                    {{review.rating}}  
+                  <ion-icon name="star"></ion-icon>
+                    
+                  </button>
+
+
+             
+                          </ion-item>
+      </ion-list>
+        
+  </ion-card>
+
+
+
+
+
+  
+  </ion-content>

@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-navbar color = "secondary" >
+      <ion-title>
+        The Meal
+      </ion-title>
+    </ion-navbar>
+</ion-header>
+  
+  <ion-content padding>
+  <!-->
+    <ion-title text-center>
+        The Meal
+    </ion-title><!-->
+    <ion-list>
+      <ion-item>
+          <ion-label color="primary" floating> <font size="5">What are you making?</font></ion-label>
+          <ion-input [(ngModel)] = "name"></ion-input>
+      </ion-item>
+      <br>
+      <br>
+      <ion-item>
+          <ion-label color="primary" floating><font size="5">Description (optional)</font></ion-label>
+          <ion-input [(ngModel)] = "desc"></ion-input>
+      </ion-item>
+    </ion-list>
+      <br>
+      <br>
+      <br>
+      <br>
+      
+
+      <ion-label color="primary"><font size="5">Click To Add Image (optional)</font></ion-label>
+
+         <ion-row>
+                <ion-col width = auto style = "text-align: center">
+                        <button ion-button icon-only class = "coba" large>
+                                <ion-icon name="image"></ion-icon></button>
+                </ion-col>
+              </ion-row>
+  </ion-content>
+
+<ion-footer text-center>
+    <button ion-button color = "secondary" round outline large (click)= "continue()"> Continue </button>
+</ion-footer>
+
+
+ 
+  

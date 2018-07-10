@@ -1,0 +1,150 @@
+<ion-header text-center>
+    
+     <ion-navbar color = "secondary">
+       <ion-title>Selected Meal Plan</ion-title>
+       <!-- <ion-buttons end>
+          <button ion-button (click)="continue()"> New </button>
+      </ion-buttons>
+      <ion-buttons end>
+          <button ion-button (click)="viewing()"> Join </button>
+      </ion-buttons> -->
+    </ion-navbar>
+   </ion-header>
+
+  
+    <ion-content class="card-background-page">
+            <ion-list inset>
+              <ion-list-header text-center style="font-size:50px;color: #488aff">
+                  {{name}}
+              </ion-list-header>
+              <ion-item>
+                  <ion-card>
+                    <img id="Content" class = "img-opacity" src = {{src}}/>
+                      <ion-grid>
+                          <ion-row>
+                            <ion-col>
+                                <ion-item >
+                                    <ion-icon item-start icon-left clear small name="home"> {{addrs}}</ion-icon>
+                                  <!-- </ion-item> -->
+                            <!-- </ion-col> -->
+                            <!-- <ion-col> -->
+                                <!-- <ion-item > -->
+                                    <ion-icon item-end icon-left clear small name="time"> {{time}} {{day}}</ion-icon>
+                                </ion-item>
+                            </ion-col>
+                          </ion-row>
+                        </ion-grid>
+                  </ion-card>
+              </ion-item>
+      
+              <ion-list inset>
+                    <ion-item>
+                      <ion-avatar item-start>
+                          <img src="http://www.hexatar.com/gallery/thumb/20151029_m5631acd00bba4.png">
+                      </ion-avatar>
+                        <h2>{{owner}}</h2>
+                        <button ion-button outline item-end icon-left (click)= "userProfile(owner)" >
+                                <ion-icon name="happy"></ion-icon>
+                                USER PROFILE
+                              </button>
+                      </ion-item>
+                  <ion-item>
+                      {{participant}} participant(s)
+                    </ion-item>
+
+
+
+                    <ion-card>
+                            <ion-item-divider color = "light">
+                                <ion-icon name="body" item-start></ion-icon>
+                                <h1>Participants</h1>
+                              </ion-item-divider>
+                      
+                              <ion-list>
+                                  <ion-item *ngFor="let participant of existing_meal_plan.participants">
+                                      
+                                    <ion-avatar item-start>
+                                      <img src= "http://www.hexatar.com/gallery/thumb/171025_051339_m66a7450fd4_avatar.png">
+                                    </ion-avatar>
+                                    <!-- <button ion-button> -->
+                                    <h2>{{participant.username}}</h2>
+                                    <p *ngIf = "participant.chef">Co-chef</p>
+                                    <p *ngIf = "participant.payer">Payer</p>
+                                    <p *ngIf = "participant.eater">Eater</p>
+                                    <p *ngIf = "participant.cleaner">Cleaner</p>
+                                    <p *ngIf = "participant.shopper">Shopper</p>
+                                  <!-- </button> -->
+                                  <button ion-button outline item-end icon-left (click)= "userProfile(participant.username)" >
+                                      <ion-icon name="happy"></ion-icon>
+                                      USER PROFILE
+                                    </button>
+                                  </ion-item>
+                                </ion-list>
+                              
+                        </ion-card>
+
+
+
+                  <ion-item text-left>
+                      <button ion-button [disabled] =a1 (click)="checkingOne($a)"class= {{chg1}}>
+                      <ion-avatar>
+                          <img src="http://www.hexatar.com/gallery/thumb/171025_051339_m66a7450fd4_avatar.png">
+                      </ion-avatar>
+                      <h2> {{role1}}</h2>
+                      <!-- <h2> anjing</h2> -->
+                      <!-- <p type="user1">user 1 name</p> -->
+                    </button>
+                    <br>
+                    <!-- </ion-item> -->
+                
+      
+                    <!-- <ion-item> -->
+                            <button ion-button [disabled] =b1 (click)="checkingTwo($a)" class= {{chg2}}>
+                        <ion-avatar >
+                                <img src="http://www.hexatar.com/gallery/thumb/171025_051339_m66a7450fd4_avatar.png">
+                        </ion-avatar>
+                        <h2>{{role2}}</h2>
+                        <!-- <p type="user2">user 2 name</p> -->
+                    </button>
+                    <br>
+                      <!-- </ion-item> -->
+
+                      <!-- <ion-item> -->
+                            <button ion-button [disabled] =c1 (click)="checkingThree($a)" class= {{chg3}}>
+                            <ion-avatar >
+                                    <img src="http://www.hexatar.com/gallery/thumb/171025_051339_m66a7450fd4_avatar.png">
+                            </ion-avatar>
+                            <h2>{{role3}}</h2>
+                            <!-- <p type="user1">user 3 name</p> -->
+                        </button>
+                        <br>
+                          <!-- </ion-item> -->
+
+                          <!-- <ion-item> -->
+                                <button ion-button [disabled] =d1 (click)="checkingFour($a)" class= {{chg4}}>
+                                <ion-avatar >
+                                        <img src="http://www.hexatar.com/gallery/thumb/171025_051339_m66a7450fd4_avatar.png">
+                                </ion-avatar>
+                                <h2>{{role4}}</h2>
+                                <!-- <p type="user1">user 4 name</p> -->
+                            </button>
+                            <br>
+                              <!-- </ion-item> -->
+
+                              <!-- <ion-item> -->
+                                    <button ion-button [disabled] =e1 (click)="checkingFive($a)" class= {{chg5}}> 
+                                    <ion-avatar >
+                                            <img src="http://www.hexatar.com/gallery/thumb/171025_051339_m66a7450fd4_avatar.png">
+                                    </ion-avatar>
+                                    <h2>{{role5}}</h2>
+                                    <!-- <p type="user1">user 5 name</p> -->
+                                </button>
+                                  </ion-item>
+              </ion-list>
+      
+            </ion-list>
+          </ion-content>
+   
+    <ion-footer text-center>
+        <button ion-button color = "secondary" round outline large (click)= "continue()"> Join Plan </button>
+    </ion-footer>

@@ -1,0 +1,95 @@
+<ion-header>
+    <ion-navbar color = "secondary">
+      <ion-title text-center>
+        Participants and Roles
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+
+<ion-content text-center>
+    <!--><ion-card>
+        <ion-card-header>
+            <h1>In Progress...</h1>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-title text-center>
+                <font size = "15"> {{name}} </font>
+            </ion-title>
+            <h4>{{addr}}</h4>  
+            <h4>{{date}} @ {{time}} {{day}}</h4>
+        </ion-card-content>
+    </ion-card>
+    </!-->
+    <!-->
+    <ion-title text-center>
+        Participants and Roles
+    </ion-title><!-->
+    
+  <!-- <ion-card> -->
+  <!-- <ion-label color="primary" stacked><font size="5">Max Number Participants</font></ion-label> -->
+  <ion-list inset>
+  <ion-item-divider>
+      <p style = "font-size: 25px; color: #488aff">Max Number Participants</p>
+  </ion-item-divider>
+  <br>
+  <ion-card class = "counter" >
+    <ion-item style = "text-align: center" >
+      {{total}}
+    </ion-item>
+  </ion-card>
+  <button ion-button icon-only color="dark" (tap)="tapEvent2($event)" (click) = "checkingStates($a)">
+    <ion-icon name="arrow-down"></ion-icon>
+  </button>
+
+  <button ion-button icon-only color="dark" (tap)="tapEvent($event)" (click) = "checkingStates($a)">
+    <ion-icon name="arrow-up"></ion-icon>
+  </button>
+  <br>
+  <br>
+  <!-- </ion-card> -->
+
+
+  
+  <!-- <ion-card> -->
+  <ion-item-divider>
+    <p style = "font-size: 25px; color: #488aff">Click Available Role(s)</p>
+  </ion-item-divider>
+  <br>
+  <button ion-button (click)="clickEventChef($a)" (click) = "checkingStates($f)" class = {{chg1}} >Co-Chef</button>
+  <button ion-button (click)="clickEventCleaner($b)" (click) = "checkingStates($g)" class = {{chg2}}>Cleaner</button>
+  <br>
+  <br>
+  <button ion-button (click)="clickEventShopper($c)" (click) = "checkingStates($h)" class = {{chg3}}>Grocery Shopper</button>
+  
+  <button ion-button (click)="clickEventPayer($d)" (click) = "checkingStates($i)" class = {{chg4}}>Payer</button>
+  <br>
+  <br>
+  <button ion-button (click)="clickEventEater($e)" (click) = "checkingStates($j)" class = {{chg5}}>Free Eater</button>  
+  <br>
+  <br>
+
+</ion-list>
+  <!-- </ion-card> -->
+
+
+<ion-footer text-center>
+    <font color = {{styling}} size = "1"> {{mssg}} </font><br>
+    <button ion-button color = "secondary" round outline large [disabled]=disable (click)= "continue()"> Continue </button>
+</ion-footer>
+
+
+
+
+
+
+
+
+
+        <!-- <ion-card>
+          <img class = "img-opacity" src = {{srcs}}/>
+          <div class="card-title">{{mealPlan.foodName}}</div>
+          <div class="card-subtitle1">{{mealPlan.eventDate}}</div>
+          <div class="card-subtitle2">{{mealPlan.eventTime}} {{mealPlan.eventDay}}</div>
+        </ion-card> -->
+  

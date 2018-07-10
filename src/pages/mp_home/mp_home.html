@@ -1,0 +1,46 @@
+<ion-header text-center>
+    
+     <ion-navbar color = "secondary">
+       <ion-title>Meal Plan</ion-title>
+       <ion-buttons end>
+          <button ion-button (click)="continue()"> New </button>
+      </ion-buttons>
+      <ion-buttons end>
+          <button ion-button (click)="join()"> Join </button>
+      </ion-buttons>
+    </ion-navbar>
+   </ion-header>
+
+   <ion-content class="card-background-page">
+      <ion-list inset>
+        <ion-list-header style="font-size:30px;">
+            Upcoming Meal Plans
+        </ion-list-header>
+        <ion-item *ngIf="meal_plans.length == 0"><p>No meal plans...</p><button ion-button (click)="continue()" item-end> Make one!</button></ion-item>
+        <ion-item *ngFor="let mealPlan of meal_plans">
+            <ion-card (click)="selectedCard(mealPlan)">
+              <ion-card-header id="Content" >{{mealPlan.eventDate}} || {{mealPlan.eventTime}} {{mealPlan.eventDay}} || {{mealPlan.eventAddrs}}</ion-card-header>
+              <img id="Content" class = "img-opacity" src = {{mealPlan.picSource}}/>
+                  <ion-grid>
+                        <ion-row>
+                          <ion-col>
+                                <ion-item>
+                                        <ion-avatar item-start>
+                                            <img src="http://www.hexatar.com/gallery/thumb/20151029_m5631acd00bba4.png">
+                                        </ion-avatar>
+                                          <h1>{{mealPlan.foodName}}</h1>
+                                          <p>{{mealPlan.ownerName}}</p>
+                                          <ion-icon item-end icon-left clear small name="book"> Task: Owner</ion-icon>
+                                    </ion-item>
+                          </ion-col>
+                        </ion-row>
+                      </ion-grid>
+
+            </ion-card>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+   
+   <!-- <ion-footer text-center>
+      <button ion-button color = "secondary" round outline large [disabled]=disable (click)= "continue()"> Finish and Review</button>
+  </ion-footer> -->

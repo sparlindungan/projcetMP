@@ -1,0 +1,94 @@
+// #Content {
+//     border-bottom: 1px solid #333435; 
+//     // margin-bottom:2px;
+//     // margin-top: 2px;
+// }
+
+// #Content2 {
+//     border-bottom: 1px solid #333435; 
+//     margin-bottom:2px;
+//     margin-top: 2px;
+// }
+
+.on {
+    background-color: rgba(236, 19, 19, 0.288);
+    // background-color: rgb(255, 255, 255);
+    border: 1px solid #488aff;
+    color: #488aff;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 40px;
+     
+}
+
+.off {
+    background-color: rgb(255, 255, 255);
+    // border-color: #488aff;
+    border: 1px solid #488aff;
+    // color: #ff4848;
+    color: #488aff;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+.background-image {
+    background-image: url('../img/background/image.jpg');
+    // width: 100vw;
+    // height: 100vh;
+  
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+    // border: 1px solid #000308;
+    // border-radius: 40px;
+    // display: inline-block;
+  }
+
+.card-background-page {
+    
+      ion-card {
+        position: relative;
+        // text-align: center;
+      }
+    
+      .card-title {
+        position: absolute;
+        top: 43%;
+        font-size: 2.0em;
+        width: 100%;
+        font-weight: bold;
+        color: #fff;
+        text-align: center;
+      }
+    
+      .card-subtitle {
+        font-size: 1.0em;
+        position: absolute;
+        top: 49%;
+        width: 100%;
+        color: #fff;
+        text-align: center;
+      }
+    
+    }
+
+    // .item-avatar  {     
+    //   width:1000% !important;  
+    //   height : 1000% !important;  
+    //   max-width: 100px !important;  //any size
+    //   max-height: 100px !important; //any size 
+    //   }
+

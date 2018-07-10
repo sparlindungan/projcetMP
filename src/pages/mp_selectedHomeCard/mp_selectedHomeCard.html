@@ -1,0 +1,113 @@
+<ion-header>
+    <ion-navbar color = "secondary">
+      <ion-title>Upcoming</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content class="card-background-page">
+  
+  <ion-card>
+  
+    <ion-item-divider color = "light">
+      <ion-avatar  item-start>
+        <img src="http://www.hexatar.com/gallery/thumb/20151029_m5631acd00bba4.png">
+      </ion-avatar>
+      <h1>{{owner}}</h1>
+      <h2>{{date}} {{time}}{{day}}</h2>
+      <h2>{{addrs}}</h2>
+    </ion-item-divider>
+  
+    <img class="background-image" src= {{src}}>
+    <div class="card-title">{{name}}</div>
+    <div class="card-subtitle">{{role}}</div>
+    
+  
+    <ion-card-content>
+      <!-- <h2>Food name</h2> -->
+      <br>
+      <p >{{details}}</p>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card>
+      <ion-item-divider color = "light">
+          <ion-icon name="heart" item-start></ion-icon>
+          <h1>My Role</h1>
+        </ion-item-divider>
+
+        <ion-card-content>
+          {{role}}
+        <ion-list *ngIf="myGroceries != undefined">
+          <ion-item *ngFor="let groceryItem of myGroceries">
+            <h2>{{groceryItem.itemName}}</h2>
+          </ion-item>
+        </ion-list>
+            <br>
+        </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+      <ion-item-divider color = "light">
+          <ion-icon name="body" item-start></ion-icon>
+          <h1>Participants</h1>
+        </ion-item-divider>
+
+        <ion-list>
+            <ion-item *ngIf="participants == undefined">
+              No Participants At This Time
+            </ion-item>
+            <ion-item *ngFor="let participant of participants">
+                
+              <ion-avatar item-start>
+                <img src= {{picture}}>
+              </ion-avatar>
+              <!-- <button ion-button> -->
+              <h2>{{participant.username}}</h2>
+              <p *ngIf = "participant.chef">Co-chef</p>
+              <p *ngIf = "participant.payer">Payer</p>
+              <p *ngIf = "participant.eater">Eater</p>
+              <p *ngIf = "participant.cleaner">Cleaner</p>
+              <p *ngIf = "participant.shopper">Shopper</p>
+            <!-- </button> -->
+            <button ion-button outline item-end icon-left (click)= "userProfile(participant.username)" >
+                <ion-icon name="happy"></ion-icon>
+                USER PROFILE
+              </button>
+            </ion-item>
+
+          </ion-list>
+        
+  </ion-card>
+  <ion-card *ngIf="isOwner">
+      <ion-item-group>
+          <ion-item-divider color="light">
+            <ion-icon name="cart" item-start></ion-icon>
+            <h1>Grocery list</h1></ion-item-divider>
+          <ion-item *ngFor="let item of items">{{ item.itemName }}<p *ngIf="item.beingBought">{{ item.username }}</p> <p *ngIf="!item.beingBought">Buyer Needed</p></ion-item>
+        </ion-item-group>
+  </ion-card>
+
+  <ion-card>
+      <ion-item-group>
+          <ion-item-divider color="light">
+            <ion-icon name="pricetags" item-start></ion-icon>
+            <h1>Tags</h1></ion-item-divider>
+          <ion-item *ngFor="let tag of tags">{{ tag }}</ion-item>
+        </ion-item-group>
+  </ion-card>
+
+
+  
+  </ion-content>
+
+  <ion-footer text-center>
+    <button ion-button color = "secondary" round outline large (click)= "continue()"> Finish and Review </button>
+    <button ion-button color = "danger" round outline large (click)= "cancel()"> Cancel Meal Plan </button>
+</ion-footer>
+  
+  <style>
+    .social-cards ion-col {
+      padding: 0;
+    }
+  </style>

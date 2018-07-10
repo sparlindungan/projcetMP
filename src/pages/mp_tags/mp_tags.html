@@ -1,0 +1,90 @@
+<ion-header>
+    
+     <ion-navbar color = "secondary">
+       <ion-title>Groceries and Tags</ion-title>
+       
+     </ion-navbar>
+    
+   </ion-header>
+    
+   <ion-content text-center>
+   <!-->
+    <ion-title text-center>
+        Groceries and Tags
+    </ion-title>
+    </!-->
+      <!--><ion-title text-center>
+        <font size = "20"> Food: </font> 
+        <font size = "20" color = "red"> {{name}} </font> </ion-title>
+      <h1>Address: {{addr}}</h1>  
+      <h1>Time: {{time}} {{day}}</h1></!-->
+
+      <br>
+
+    <!-- <ion-label color="primary" stacked><font size="5">Grocery List</font></ion-label> -->
+    <ion-list inset>
+    <ion-item-divider>
+            <p style = "font-size: 25px; color: #488aff">Grocery List</p>
+    </ion-item-divider>
+    <br>
+    <ion-buttons>
+        <span style="font-style:italic">Add grocery item</span>
+        <button end ion-button icon-only (click)="addGrocery()" item-end><ion-icon name="add"></ion-icon></button>
+    </ion-buttons>
+
+       <ion-list>
+           <ion-item *ngIf="groceries.length == 0">
+                <p text-center>No Groceries</p>
+           </ion-item>
+           <ion-item-sliding *ngFor="let grocery of groceries">
+               <ion-item>
+                   <p text-center>{{grocery}}</p>
+               </ion-item>
+    
+               <ion-item-options>
+                   <button ion-button icon-only (click)="editGrocery(grocery)" color = "light">
+                       <ion-icon name="paper"></ion-icon>
+                   </button>
+                   <button ion-button icon-only (click)="deleteGrocery(grocery)" color = "danger">
+                       <ion-icon name="trash"></ion-icon>
+                   </button>
+               </ion-item-options>
+    
+           </ion-item-sliding>
+    
+       </ion-list>
+
+       <br>
+       <br>
+     
+       <!-- <ion-label color="primary" stacked><font size="5">Click Relevant Tag(s)</font></ion-label> -->
+       <ion-item-divider>
+            <p style = "font-size: 25px; color: #488aff">Click Relevant Tag(s)</p>
+    </ion-item-divider>
+    <br>
+       <button ion-button (click)="clickEventVegetarian($a)" class = {{chg1}} >Vegetarian</button>
+       <button ion-button (click)="clickEventVegan($b)" class = {{chg2}}>Vegan</button>
+       <br>
+       <p></p>
+       <button ion-button (click)="clickEventPeanutFr($c)"  class = {{chg3}}>Peanut free</button>
+       <button ion-button (click)="clickEventGlutenFr($d)" class = {{chg4}}>Gluten free</button>
+       <br>
+       <p></p>
+       <button ion-button *ngFor="let tag of tags" (click)="deleteTag(tag)"><i>{{tag}}</i></button>
+       <button ion-button (click)="clickEventCustom($e)"><i>custom</i></button>
+       <br>
+       <br>
+    </ion-list>
+    
+       <!-- <button ion-button (click)="viewing()" >
+          <ion-icon>view</ion-icon>
+      </button> -->
+
+
+   <!-- <button ion-button color = "secondary" round outline large (click)= "testing()"> test</button> -->
+   </ion-content>
+
+
+   <ion-footer text-center>
+      <button ion-button color = "secondary" round outline large [disabled]=disable (click)= "continue()"> Finish and Review</button>
+  </ion-footer>

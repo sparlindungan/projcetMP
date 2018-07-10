@@ -1,0 +1,57 @@
+<ion-header>
+    <ion-navbar color = "secondary">
+      <ion-title >
+        Location Date and Time
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <!--><ion-title text-center><font size = "20"> {{name}} </font> </ion-title></!-->
+    <!--><ion-title text-center>
+        Location Date and Time
+    </ion-title><!-->
+      <ion-item >
+          <ion-label color="primary" stacked> <font size="5">Address</font></ion-label>
+          <ion-input type = "addr" [(ngModel)] = "addr"></ion-input>
+      </ion-item>
+      <br>
+      <br>
+      <ion-item>
+          <ion-label color="primary" stacked><font size="5">Date</font></ion-label>
+          <ion-input  [(ngModel)] = "date" placeholder="(MM / DD)"></ion-input>
+      </ion-item>
+      <br>
+      <br>
+      <ion-item>
+          <ion-label color="primary" stacked><font size="5">Time</font></ion-label>
+          <ion-input [(ngModel)] = "time" placeholder="(HH : MM)"></ion-input>
+      </ion-item>
+      <br>
+      <br>
+
+            <!-- Segment in content -->
+            <ion-segment [(ngModel)]="timeOfDay" color="primary" >
+
+              <ion-segment-button value="AM">
+                  <font size="5"> AM </font>
+              </ion-segment-button>
+
+              <ion-segment-button value="PM">
+                  <font size="5"> PM </font>
+              </ion-segment-button>
+
+            </ion-segment>
+
+        
+      
+      
+        
+
+
+  </ion-content>
+
+  <ion-footer text-center>
+      <button ion-button color = "secondary" round outline large (click)= "continue()"> Continue </button>
+  </ion-footer>
+  
